@@ -67,7 +67,7 @@ public class Color {
     }
 
     public void setHexValue(String hexValue) throws IllegalArgumentException {
-        if(hexValue.matches("^#([A-F0-9]{6})")) {
+        if(hexValue != null && hexValue.matches("^#([A-F0-9]{6})")) {
             this.hexValue = hexValue;
             red = Integer.parseInt(hexValue.substring(1, 3), 16);
             green = Integer.parseInt(hexValue.substring(3, 5), 16);

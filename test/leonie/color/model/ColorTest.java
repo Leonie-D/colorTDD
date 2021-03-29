@@ -87,6 +87,11 @@ public class ColorTest {
         new Color("#D58d35");
     }
 
+    @Test (expected = IllegalArgumentException.class)
+    public void testColor_UnArgument_ArgumentIllegal_null () {
+        new Color(null);
+    }
+
     @Test
     public void testGetters() {
         assertEquals(rouge, color1.getRed());
@@ -203,6 +208,11 @@ public class ColorTest {
         assertEquals(255, color1.getGreen());
         assertEquals(255, color1.getBlue());
         assertEquals("#FFFFFF", color1.getHexValue());
+    }
+
+    @Test (expected = IllegalArgumentException.class)
+    public void testSetHexValue_null() {
+        color1.setHexValue(null);
     }
 
     @Test (expected = IllegalArgumentException.class)
